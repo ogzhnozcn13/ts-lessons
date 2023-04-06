@@ -27,8 +27,83 @@ arr.push("bb")
 
 // let arr2: number[] = [12,23,435,"aa"]
 
-//? tuples:
+//? tuples-----------------------------------------
+
 let mytup: [number, string];
 mytup = [2, "aa"];
 // mytup = ["ee", 2]
 // mytup = [3, "ww", 9]
+
+const ozi = 123;
+
+const ww = "asasas";
+
+
+
+//? enum -------------------------------------------
+
+enum Role {
+    User,
+    Admin
+}
+
+let curentUser: Role = Role.User
+console.log(curentUser);
+
+const enum Role2 {
+    User,
+    Admin
+}
+
+
+//? enum -------------------------------------------
+
+enum tshirt {
+    small = "s",
+    medium = "m",
+    large = "l",
+    xl = 51,
+    xxl,
+    xxxl
+}
+
+console.log(tshirt.medium);
+console.log(tshirt.xxxl);
+
+
+
+//? unknown -----------------------------------------
+
+let notSure: unknown = 4;
+notSure = "hhhh"
+notSure =100
+
+// let numVar: number = notSure
+
+
+
+//? void --------------------------------------------
+
+function abcd(n1:number, n2:number): void {
+    console.log(n1+n2);
+}
+// let res : number =abcd(2,7)
+
+
+
+//? never --------------------------------------------
+
+// function error(message: string): never{
+//     throw new Error(message);
+// }
+// error("new error")
+
+//? union -------------------------------------------
+
+let uVar: string | number = 0
+uVar = "aaa"
+uVar = 23
+// uVar = true
+// uVar = {}
+
+//? -------------------------------------------------

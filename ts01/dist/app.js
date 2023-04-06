@@ -18,3 +18,45 @@ ab = "xxx";
 const arr = [1, 2, 3, "aa"];
 arr.push("bb");
 // let arr2: number[] = [12,23,435,"aa"]
+//? tuples-----------------------------------------
+let mytup;
+mytup = [2, "aa"];
+// mytup = ["ee", 2]
+// mytup = [3, "ww", 9]
+const ozi = 123;
+const ww = "asasas";
+//? enum -------------------------------------------
+var Role;
+(function (Role) {
+    Role[Role["User"] = 0] = "User";
+    Role[Role["Admin"] = 1] = "Admin";
+})(Role || (Role = {}));
+let curentUser = Role.User;
+console.log(curentUser);
+//? enum -------------------------------------------
+var tshirt;
+(function (tshirt) {
+    tshirt["small"] = "s";
+    tshirt["medium"] = "m";
+    tshirt["large"] = "l";
+    tshirt[tshirt["xl"] = 51] = "xl";
+    tshirt[tshirt["xxl"] = 52] = "xxl";
+    tshirt[tshirt["xxxl"] = 53] = "xxxl";
+})(tshirt || (tshirt = {}));
+console.log(tshirt.medium);
+console.log(tshirt.xxxl);
+//? unknown -----------------------------------------
+let notSure = 4;
+notSure = "hhhh";
+notSure = 100;
+// let numVar: number = notSure
+//? void --------------------------------------------
+function abcd(n1, n2) {
+    console.log(n1 + n2);
+}
+// let res : number =abcd(2,7)
+//? never --------------------------------------------
+function error(message) {
+    throw new Error(message);
+}
+error("new error");
