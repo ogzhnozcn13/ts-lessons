@@ -56,7 +56,58 @@ function abcd(n1, n2) {
 }
 // let res : number =abcd(2,7)
 //? never --------------------------------------------
-function error(message) {
-    throw new Error(message);
+// function error(message: string): never{
+//     throw new Error(message);
+// }
+// error("new error")
+//? union -------------------------------------------
+let uVar = 0;
+uVar = "aaa";
+uVar = 23;
+function fonk(n1, n2) { }
+//String Literals
+// type car = 'BMW' | 'Audi'
+// let car1: car = 'BMW' 
+// let car2: car = 'Audi' 
+// let car3: car = 'Mercedes' 
+//? intersection ----------------------------------------------
+const employee = {
+    name: "ozi",
+    id: 1
+};
+let obj1 = {
+    book_id: 1234,
+    book_name: "Lord of the Rings",
+    Author_Id: 1892,
+    Author_name: "J. R. R. Tolkien",
+};
+//? type assortions -------------------------------------------
+let score = "350";
+// console.log(score.split(''));
+console.log(score.split(''));
+console.log(score);
+console.log(score);
+//? functions -------------------------------------------------
+function selamla(greet, name) {
+    if (!name)
+        name = 'user';
+    return `${greet + ' ' + name}`;
 }
-error("new error");
+selamla('Merhaba', 'sercan');
+selamla('Merhaba');
+function addd(a, b) {
+    return a + b;
+}
+console.log(addd('Hello', "Mark"));
+console.log(addd(4, 2));
+// console.log(addd(4, 'string'))
+//? Rest Parameters --------------------------------------------
+function abcde(num, ...numbers) {
+    let total = num;
+    numbers.forEach(number => total += number);
+    console.log(total);
+}
+abcde(1, 2);
+abcde(1, 2, 3, 4);
+abcde(100, 200, 3, 5, 6, 7, 8, 9);
+abcde(1);

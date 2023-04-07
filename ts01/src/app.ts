@@ -106,4 +106,94 @@ uVar = 23
 // uVar = true
 // uVar = {}
 
-//? -------------------------------------------------
+//?  type aliases -------------------------------------------
+
+type nums = number | string
+
+function fonk(n1: nums, n2:nums) {}
+
+//String Literals
+
+// type car = 'BMW' | 'Audi'
+
+// let car1: car = 'BMW' 
+// let car2: car = 'Audi' 
+// let car3: car = 'Mercedes' 
+
+
+//? intersection ----------------------------------------------
+
+const employee : {
+    name: string;
+    id?:number
+} = {
+    name: "ozi",
+    id: 1
+    
+}
+
+type Book = {
+    book_id: number;
+    book_name: string;
+  }
+    
+  type Author = {
+    Author_Id: number;
+    Author_name: string;
+  }
+
+  type intersected_type = Book & Author;
+
+  let obj1: intersected_type = {
+    book_id: 1234,
+    book_name: "Lord of the Rings",
+    Author_Id: 1892,
+    Author_name: "J. R. R. Tolkien",
+  };
+
+
+//? type assortions -------------------------------------------
+
+let score: unknown = "350";
+// console.log(score.split(''));
+console.log((<string>score).split(''));
+console.log(score as string);
+console.log(score as number);
+
+
+//? functions -------------------------------------------------
+
+function selamla (greet: string, name?:string ):string{
+    if(!name) name = 'user'
+    return `${greet + ' ' + name}`
+}
+selamla('Merhaba','sercan')
+selamla('Merhaba')
+// selamla('Merhaba','sercan', 'zamazingo')
+
+
+//? function overloading --------------------------------------
+
+function addd (a:string, b:string):string;
+function addd (a:number, b:number):number;
+function addd (a:any, b:any):any{
+    return a+b
+}
+console.log(addd('Hello', "Mark"))
+console.log(addd(4, 2))
+// console.log(addd(4, 'string'))
+
+
+//? Rest Parameters --------------------------------------------
+function abcde(num: number, ...numbers:number[]){
+    let total = num; 
+
+    numbers.forEach(number=> total+= number)
+    console.log(total);
+}
+
+
+abcde(1,2);
+abcde(1,2,3,4)
+abcde(100, 200, 3, 5, 6, 7, 8, 9)
+abcde(1);
