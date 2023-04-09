@@ -213,3 +213,60 @@ let numArr = getArray([1,2,3,4])
 let strArr = getArray(['john', 'Mike', 'Alan'])
 // strArr.push(3)  /* Error */
 // numArr.push('Sally') /* Error */
+
+
+
+//? generics ---------------------------------------------------
+interface Result<T> {
+    data: T | null
+}
+const myData:Result<number> = {data: 35}
+const myData2:Result<string> = {data: '35'}
+const myData3:Result<null> = {data:null}
+
+
+class KeyValuePair<K,V> {
+    constructor(public key: K, public value: V) {}
+  }
+  let kvp = new KeyValuePair<number, string>(1,'a')
+  let shorter = new KeyValuePair('a',1)
+
+
+
+function displayType<T, U>(p1: T, p2: U){
+    console.log(`p1: ${typeof(p1)},p2: ${typeof(p2)}`)
+}
+displayType(console.log, 5 > 8) //p1: function,p2: boolean
+
+
+
+// interface Product {
+//     name: string; 
+//     price: number;
+// }
+
+// function update<T extends object, U extends keyof T>(obj: T, prop: U, newValue: T[U]){
+//     obj[prop] = newValue;
+// }
+
+// const product1:Product = {name: 'TV', price: 450}
+// console.log(product1)
+
+// update(product1, 'name', 'Monitor');
+
+// console.log(product1)
+// update(product1, 'price', 650)
+// console.log(product1)
+
+
+interface Product{
+    id: number;
+    name: string;
+    price: number;
+}
+
+let product1: Required <Product> = {id:3,name:'three',price:500}
+let product2: Partial <Product> = {id:3}
+let product3: Readonly <Product> = {id:3,name:'three',price:500}
+let product4: Pick <Product, 'id' | 'price'> = {id:3,price:500}
+let product5: Omit <Product, 'name'> = {id:3,price:500}

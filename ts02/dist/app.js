@@ -123,5 +123,23 @@ function getArray(items) {
 }
 let numArr = getArray([1, 2, 3, 4]);
 let strArr = getArray(['john', 'Mike', 'Alan']);
-// strArr.push(3)  /* Error */
-// numArr.push('Sally') /* Error */
+const myData = { data: 35 };
+const myData2 = { data: '35' };
+const myData3 = { data: null };
+class KeyValuePair {
+    constructor(key, value) {
+        this.key = key;
+        this.value = value;
+    }
+}
+let kvp = new KeyValuePair(1, 'a');
+let shorter = new KeyValuePair('a', 1);
+function displayType(p1, p2) {
+    console.log(`p1: ${typeof (p1)},p2: ${typeof (p2)}`);
+}
+displayType(console.log, 5 > 8); //p1: function,p2: boolean
+let product1 = { id: 3, name: 'three', price: 500 };
+let product2 = { id: 3 };
+let product3 = { id: 3, name: 'three', price: 500 };
+let product4 = { id: 3, price: 500 };
+let product5 = { id: 3, price: 500 };
